@@ -7,6 +7,7 @@ import requests
 from flask import Flask, request
 from other_module import fn_from_other_module
 from dotenv import load_dotenv
+from flask_cors import CORS
 
 #adding .env.local to os.environ
 load_dotenv(dotenv_path="./.env.local")
@@ -18,6 +19,7 @@ if not UNSPLASH_KEY:
   raise EnvironmentError("Please create .env.local file and insert UNSPLASH_KEY")
 
 app = Flask(__name__)
+CORS(app)
 app.config["DEBUG"] = DEBUG
 # DEBUG="" add in .env.local if you want debug=false
 
