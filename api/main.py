@@ -12,11 +12,14 @@ from dotenv import load_dotenv
 load_dotenv(dotenv_path="./.env.local")
 UNSPLASH_URL = 'https://api.unsplash.com/photos/random'
 UNSPLASH_KEY = os.environ.get("UNSPLASH_KEY","")
+DEBUG = bool(os.environ.get("DEBUG",True))
 
 if not UNSPLASH_KEY:
   raise EnvironmentError("Please create .env.local file and insert UNSPLASH_KEY")
 
 app = Flask(__name__)
+app.config["DEBUG"] = DEBUG
+# DEBUG="" add in .env.local if you want debug=false
 
 @app.route("/")
 def hello():
