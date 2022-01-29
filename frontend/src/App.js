@@ -22,6 +22,7 @@ const App = () => {
       console.log(error);
     }
   };
+
   useEffect(() => getSavedImages(), []);
 
   const handleSearchSubmit = async (e) => {
