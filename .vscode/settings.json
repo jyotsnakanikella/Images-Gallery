@@ -1,5 +1,6 @@
 {
     "editor.tabSize":2,
+    "files.eol": "\n",
     "eslint.validate":[
         "html",
         "javascript",
@@ -12,9 +13,9 @@
     "python.linting.pycodestyleEnabled": true,
     "python.linting.pylintEnabled": true,
     "python.formatting.provider": "black",
-    // "python.linting.pycodestyleArgs": [
-    //     "--max-line-length=88"
-    // ],
+    "python.linting.pycodestyleArgs": [
+        "--max-line-length=88"
+    ],
     "[python]":{
         "editor.formatOnSave": true
     }
